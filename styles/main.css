@@ -131,6 +131,13 @@ main .functionalities__item:hover {
   background-color: #076795;
   transform: translateY(-10px);
 }
+main .functionalities__item:hover .secondary-button {
+  display: flex;
+  flex-direction: column;
+}
+main .functionalities__item:hover .primary-button {
+  display: none;
+}
 main .functionalities__item:hover button {
   background-color: white;
   color: #076795;
@@ -154,6 +161,9 @@ main .functionalities__item figure {
 main .functionalities__item figure img {
   max-width: 25%;
 }
+main .functionalities__item .secondary-button {
+  display: none;
+}
 main .functionalities__item .primary-button {
   cursor: pointer;
   border-radius: 50px;
@@ -174,6 +184,27 @@ main .functionalities__item .primary-button:hover {
 main .functionalities__item .long-button {
   width: 85%;
   letter-spacing: -0.06rem;
+}
+main .secondary-button {
+  align-items: center;
+  background-color: white;
+  color: #076795;
+  box-shadow: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 2rem;
+  padding: 2% 8%;
+  box-shadow: 2px 4px 6px rgba(152, 152, 152, 0.4);
+  position: relative;
+  border: 2px solid #076795;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto 1%;
+  transition: all 0.15s ease-in-out;
+}
+main .secondary-button:hover {
+  transition: all 0.15s ease-in-out;
+  transform: scale(1.07);
 }
 
 footer {

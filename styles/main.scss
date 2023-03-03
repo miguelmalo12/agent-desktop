@@ -145,7 +145,6 @@ main {
             transition: background-color 0.15s ease-in-out,
                         transform 0.25s ease-in-out;
 
-
             @include sm-desktop() {
                 flex-basis: 23%;
             }
@@ -154,10 +153,18 @@ main {
                 flex-basis: 45%;
             }
            
-            
             &:hover {
                 background-color: #076795;
                 transform: translateY(-10px);
+
+                .secondary-button {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .primary-button {
+                    display: none;
+                }
 
                 button {
                     background-color: white;
@@ -188,6 +195,10 @@ main {
                 }
             }
 
+            .secondary-button {
+                display: none;
+            }
+
             .primary-button {
                 cursor: pointer;
                 border-radius: 50px;
@@ -210,10 +221,36 @@ main {
                     transform: scale(1.1);
                 }
             }
+
+            
+
             .long-button {
                 width: 85%;
                 letter-spacing: -0.06rem;
             }
+        }
+    }
+
+    .secondary-button {
+        align-items: center;
+        background-color: white;
+        color: #076795;
+        box-shadow: none;
+        cursor: pointer;
+        border-radius: 50px;
+        font-size: 2rem;
+        padding: 2% 8%;
+        box-shadow: 2px 4px 6px rgb(152 152 152 / 40%);
+        position: relative;
+        border: 2px solid #076795;
+        width: 70%;
+        text-align: center;
+        margin: 0 auto 1%;
+        transition: all 0.15s ease-in-out;
+        
+        &:hover {
+            transition: all 0.15s ease-in-out;
+            transform: scale(1.07);
         }
     }
 }
