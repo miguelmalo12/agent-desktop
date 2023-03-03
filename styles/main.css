@@ -15,6 +15,7 @@ body {
   flex-direction: column;
   height: 100vh;
   margin: 0;
+  overflow: hidden;
 }
 
 a, a:visited {
@@ -93,7 +94,7 @@ h1 {
 }
 
 main {
-  padding: 3% 1% 1.5%;
+  padding: 3% 1% 0;
   flex-grow: 1;
   overflow: auto;
 }
@@ -116,13 +117,15 @@ main .functionalities__item {
   padding: 3% 0;
   box-shadow: 0px 0px 6px rgba(152, 152, 152, 0.4);
   transition: background-color 0.15s ease-in-out, transform 0.25s ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 @media (max-width: 1199px) {
   main .functionalities__item {
     flex-basis: 23%;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   main .functionalities__item {
     flex-basis: 45%;
   }
@@ -130,6 +133,7 @@ main .functionalities__item {
 main .functionalities__item:hover {
   background-color: #076795;
   transform: translateY(-10px);
+  margin-bottom: 0;
 }
 main .functionalities__item:hover .secondary-button {
   display: flex;
@@ -216,8 +220,15 @@ footer {
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  height: 120px;
+  height: 100px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   padding: 0 5%;
   font-size: 1.4rem;
+}
+footer .contact {
+  display: flex;
+  flex-direction: column;
+}
+footer .contact__phone, footer .contact__email {
+  display: flex;
 }/*# sourceMappingURL=main.css.map */
