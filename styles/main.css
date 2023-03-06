@@ -101,11 +101,21 @@ h1 {
   color: #333333;
   letter-spacing: 0.5rem;
 }
+@media (min-width: 1921px) {
+  h1 {
+    margin-bottom: 1.5%;
+  }
+}
 
 main {
   padding: 3% 1% 0;
   flex-grow: 1;
-  overflow: auto;
+  overflow: hidden;
+}
+@media (min-width: 1921px) {
+  main {
+    padding: 1.5% 1% 0;
+  }
 }
 main .functionalities {
   display: flex;
@@ -129,7 +139,7 @@ main .functionalities__item {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-@media (max-width: 1199px) {
+@media (max-width: 1280px) {
   main .functionalities__item {
     flex-basis: 23%;
   }
@@ -137,6 +147,11 @@ main .functionalities__item {
 @media (max-width: 1000px) {
   main .functionalities__item {
     flex-basis: 45%;
+  }
+}
+@media (min-width: 1921px) {
+  main .functionalities__item {
+    margin: 0 0 1.5%;
   }
 }
 main .functionalities__item:hover {
@@ -189,6 +204,12 @@ main .functionalities__item .primary-button {
   border: 2px solid #076795;
   width: 70%;
   transition: all 0.15s ease-in-out;
+}
+@media (max-width: 1280px) {
+  main .functionalities__item .primary-button.long-sm-desktop {
+    width: 85%;
+    letter-spacing: -0.06rem;
+  }
 }
 main .functionalities__item .primary-button:hover {
   transition: all 0.15s ease-in-out;
