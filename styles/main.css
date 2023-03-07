@@ -15,7 +15,16 @@ body {
   flex-direction: column;
   height: 100vh;
   margin: 0;
-  overflow: hidden;
+}
+@media (max-width: 1000px) {
+  body {
+    height: unset;
+  }
+}
+@media (max-width: 640px) {
+  body {
+    height: unset;
+  }
 }
 
 a, a:visited {
@@ -30,6 +39,18 @@ nav {
   height: 60px;
   background-color: white;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 640px) {
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  nav .navbar-logo {
+    max-width: 110px;
+  }
+  nav .navbar-menu {
+    width: unset;
+  }
 }
 nav li:first-of-type a {
   font-weight: 800;
@@ -74,6 +95,11 @@ nav .navbar-menu .logout-icon {
   margin-left: 7px;
   color: #333333;
 }
+@media (max-width: 640px) {
+  nav .navbar-menu .logout-icon {
+    display: none;
+  }
+}
 nav img {
   padding: 0.5% 0 0.5% 2%;
 }
@@ -106,6 +132,17 @@ h1 {
     margin-bottom: 1.5%;
   }
 }
+@media (max-height: 690px) and (min-width: 690px) {
+  h1 {
+    margin-bottom: 1.5%;
+  }
+}
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.2rem;
+    padding: 4% 0;
+  }
+}
 
 main {
   padding: 3% 1% 0;
@@ -115,6 +152,16 @@ main {
 @media (min-width: 1921px) {
   main {
     padding: 1.5% 1% 0;
+  }
+}
+@media (max-height: 690px) and (min-width: 690px) {
+  main {
+    padding: 1.5% 1% 0;
+  }
+}
+@media (max-width: 640px) {
+  main {
+    overflow: auto;
   }
 }
 main .functionalities {
@@ -133,7 +180,7 @@ main .functionalities__item {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  padding: 3% 0;
+  padding: 2.5% 0 3.5%;
   box-shadow: 0px 0px 6px rgba(152, 152, 152, 0.4);
   transition: background-color 0.15s ease-in-out, transform 0.25s ease-in-out;
   -webkit-backface-visibility: hidden;
@@ -152,6 +199,16 @@ main .functionalities__item {
 @media (min-width: 1921px) {
   main .functionalities__item {
     margin: 0 0 1.5%;
+  }
+}
+@media (max-height: 690px) and (min-width: 690px) {
+  main .functionalities__item {
+    padding: 1.75% 0 2.5%;
+  }
+}
+@media (max-width: 640px) {
+  main .functionalities__item {
+    flex-basis: 70%;
   }
 }
 main .functionalities__item:hover {
@@ -205,6 +262,9 @@ main .functionalities__item .primary-button {
   width: 70%;
   transition: all 0.15s ease-in-out;
 }
+main .functionalities__item .primary-button.long-sm-desktop {
+  letter-spacing: -0.06rem;
+}
 @media (max-width: 1280px) {
   main .functionalities__item .primary-button.long-sm-desktop {
     width: 85%;
@@ -256,6 +316,14 @@ footer {
   font-size: 1.4rem;
   color: #333333;
 }
+@media (max-width: 640px) {
+  footer {
+    font-size: 1.2rem;
+    flex-direction: column;
+    height: unset;
+    padding: 2% 5%;
+  }
+}
 footer .contact {
   display: flex;
   flex-direction: column;
@@ -264,6 +332,12 @@ footer .contact__phone, footer .contact__email {
   display: flex;
   align-items: center;
   line-height: 2.8rem;
+}
+@media (max-width: 640px) {
+  footer .contact__phone, footer .contact__email {
+    flex-direction: column;
+    padding: 3% 0;
+  }
 }
 footer .contact__phone img, footer .contact__email img {
   height: 15px;
@@ -275,4 +349,9 @@ footer .links {
   font-weight: 600;
   line-height: 2.4rem;
   text-align: right;
+}
+@media (max-width: 640px) {
+  footer .links {
+    text-align: center;
+  }
 }/*# sourceMappingURL=main.css.map */

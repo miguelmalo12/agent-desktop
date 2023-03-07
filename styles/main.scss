@@ -1,3 +1,9 @@
+@mixin phone {
+    @media (max-width: 640px) {
+      @content;
+    }
+  }
+
 @mixin tablet {
     @media (max-width: 1000px) {
       @content;
@@ -12,6 +18,12 @@
 
   @mixin bg-desktop {
     @media (min-width: 1921px) {
+        @content;
+    }
+  }
+
+  @mixin low-height {
+    @media (max-height:690px) and (min-width:690px) {
         @content;
     }
   }
@@ -33,7 +45,14 @@ body {
     flex-direction: column;
     height: 100vh;
     margin: 0;
-    overflow: hidden;
+
+    @include tablet() {
+        height: unset;
+    }
+
+    @include phone {
+        height: unset;
+    }
 }
 
 a {
@@ -52,6 +71,19 @@ nav {
     height: 60px;
     background-color: white;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+
+    @include phone {
+        display: flex;
+        align-items: center;
+
+        .navbar-logo {
+            max-width: 110px;
+        }
+        .navbar-menu {
+            width: unset;
+        }
+       
+    }
 
     li:first-of-type a {
         font-weight: 800;
@@ -99,6 +131,9 @@ nav {
             width: 15px;
             margin-left: 7px;
             color: #333333;
+            @include phone {
+                display: none;
+            }
         }
     }
 
@@ -136,6 +171,15 @@ h1 {
     @include bg-desktop(){
         margin-bottom: 1.5%;
     }
+
+    @include low-height {
+        margin-bottom: 1.5%;
+    }
+
+    @include phone {
+            font-size: 2.2rem;
+            padding: 4% 0;
+    }
 }
 
 main {
@@ -145,6 +189,14 @@ main {
 
     @include bg-desktop(){
         padding: 1.5% 1% 0;
+    }
+
+    @include low-height {
+        padding: 1.5% 1% 0;
+    }
+
+    @include phone {
+        overflow: auto;
     }
 
     .functionalities {
@@ -161,7 +213,7 @@ main {
             border-radius: 5px;
             background-color: white;
             height: max-content;
-            padding: 3% 0;
+            padding: 2.5% 0 3.5%;
             box-shadow: 0px 0px 6px rgb(152 152 152 / 40%);
             transition: background-color 0.15s ease-in-out,
                         transform 0.25s ease-in-out;
@@ -177,6 +229,14 @@ main {
 
             @include bg-desktop(){
                 margin: 0 0 1.5%;
+            }
+
+            @include low-height(){
+                padding: 1.75% 0 2.5%;
+            }
+
+            @include phone {
+                flex-basis: 70%;
             }
            
             &:hover {
@@ -240,6 +300,7 @@ main {
                 transition: all 0.15s ease-in-out;
 
                 &.long-sm-desktop {
+                    letter-spacing: -0.06rem;
                     @include sm-desktop(){
                         width: 85%;
                         letter-spacing: -0.06rem;
@@ -300,6 +361,13 @@ footer {
     font-size: 1.4rem;
     color: #333333;
 
+    @include phone {
+        font-size: 1.2rem;
+        flex-direction: column;
+        height: unset;
+        padding: 2% 5%;
+    }
+
     .contact {
         display: flex;
         flex-direction: column;
@@ -308,6 +376,12 @@ footer {
             display: flex;
             align-items: center;
             line-height: 2.8rem;
+
+            @include phone {
+                flex-direction: column;
+                padding: 3% 0;
+            }
+
             img {
                 height: 15px;
                 padding-right: 5%;
@@ -321,5 +395,9 @@ footer {
         font-weight: 600;
         line-height: 2.4rem;
         text-align: right;
+
+        @include phone {
+            text-align: center;
+        }
     }
 }
